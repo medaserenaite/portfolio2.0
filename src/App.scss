@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800;900&display=swap');
+@import "~@fontsource/cedarville-cursive/index.css"; // Weight 400.
+
+// colors
+$dark-blue: #001B2E;
+$brick-blue: #294C60;
+$peach: #FFC49B;
+$pinkish-white: #fff5f5;
+
+@keyframes copied-text-notification{
+    0% {
+     opacity: 0;
+    }
+    100% {
+     opacity: 1;
+    }
+   } 
+
+
+html {
+    background: $dark-blue;
+}
+
+.App {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.intro {
+    margin: 240px 0;
+
+    h1 {
+        font-size: 64px;
+        font-family: "Cedarville Cursive";
+        color: $pinkish-white;
+        font-weight: 100;
+        text-transform: unset;
+        line-height: 64px;
+        margin-bottom: -10px;
+    }
+    
+    &__role {
+        font-size: 12px;
+        color: $peach;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 36px;
+    flex-wrap: wrap;
+    // margin-bottom: 40px;
+    
+    .icon-wrapper {
+        padding: 5px 10px;
+        display: flex;
+        position: relative;
+
+        .icon {
+            color: $pinkish-white;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+
+            @media only screen and (min-width: 800px) {
+                height: 20px;
+                width: 20px;
+            }
+    
+            &:hover {
+                color: $brick-blue; 
+                transition-duration: 0.3s;
+            }
+    
+            &--copied {
+                color: $brick-blue;
+            }
+
+            &--location {
+                color: $pinkish-white;
+                height: 30px;
+                width: 30px;  
+                
+                @media only screen and (min-width: 800px) {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+        }
+
+        .icon-text {
+            font-size: 14px;
+            color: $pinkish-white;
+            margin: auto;
+            margin-left: 5px;
+
+            @media only screen and (min-width: 800px) {
+                font-size: 12px;
+            }
+        }
+
+        .copied-notify {
+            background-color: #ffc49b73;
+            border-radius: 5px;
+            color: $dark-blue;
+            padding: 5px 10px;
+            margin-left: 15px;
+            // position: relative;
+            position: absolute;
+
+            border: solid 1px #ffc49b73;
+            background-color: $brick-blue;
+            transition-duration: 0.3s;
+            box-shadow: 0 0px 10px 2px $peach;
+            color: white;
+
+            animation-duration: 0.3s;
+            animation-name: copied-text-notification;
+            animation-timing-function: ease-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+
+            left: 26px;
+            top: 0;
+
+            &::before {
+                display: block;
+                content: '';
+                width: 0; 
+                height: 0; 
+                border-top:6px solid transparent;
+                border-bottom: 6px solid transparent; 
+                border-right:6px solid #ffc49b73;
+                position: absolute;
+                left: -6px;
+                top: 6px;
+                transition-duration: 2s;
+
+                
+            }
+        }
+    }
+}
+
+.work-icon {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    cursor: pointer;
+    width: fit-content;
+
+    a {
+        display: flex;
+        text-decoration: none;
+        color: $pinkish-white;
+        border: solid 1px $brick-blue;
+        padding: 5px 15px;
+        border-radius: 5px;
+
+        &:hover {
+            border: solid 1px #ffc49b73;
+            background-color: $brick-blue;
+            transition-duration: 0.3s;
+            box-shadow: 0 0px 10px 2px $peach;
+        }
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+
+        @media only screen and (min-width: 800px) {
+            height: 20px;
+            width: 20px;
+        }
+
+        &-text {
+            font-size: 14px;
+            color: $pinkish-white;
+            margin: auto;
+            margin-left: 5px;
+
+            @media only screen and (min-width: 800px) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &:hover {
+        color: $brick-blue; 
+        transition-duration: 0.5s;
+    }
+    
+}
+
+h2 {
+    font-family: "Cedarville Cursive";
+    color: $pinkish-white;
+    font-size: 42px;
+}
+
+.page-wrapper {
+    max-width: 800px;
+    margin: 0 20px;
+
+    .project-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .project {
+            margin: 5px 5px 25px 5px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            background: #294c6054;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 2px -2px #9993997d, inset 0 -7px 9px -7px #9993997d;
+            // box-shadow: inset 0px -2px 5px #9993997d;
+
+            @media only screen and (min-width: 800px) {
+                flex-direction: row;
+            }
+
+            .image-wrapper {
+                width: 300px;
+                height: 200px;
+
+                img {
+                    max-width:100%;
+                    max-height:100%;
+                    object-fit: contain;
+                    z-index: 0;
+                    border-radius: 5px;
+                }
+            }
+
+            &__name {
+                text-align: left;
+                font-size: 20px;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-weight: 800;
+                color: #ADB6C4;
+                line-height: 20px;
+            }
+
+            &__details {
+                color: whitesmoke;
+                padding: 20px 5px 5px 15px;
+
+        
+                @media only screen and (min-width: 800px) {
+                    width: 400px;
+                    padding: 0 5px 5px 15px;
+                }
+        
+                a {
+                    text-decoration: none;
+                    color:#FFEFD3;
+                    font-size: 12px;
+                    position: relative;
+                    text-transform: uppercase;
+                    letter-spacing: 1.5px;
+        
+                    &:hover {
+                        transition-duration: 0.75s;
+                        color: $peach;
+        
+                        .icon {
+                            transition-duration: 0.75s;
+                            color: #ADB6C4;
+                        }
+                        &::before {
+                            transition-duration: 0.75s;
+                            background-color: #ADB6C4;
+                        }
+                    }
+        
+                    &::before {
+                        display: block;
+                        content: '';
+                        height: 1px;
+                        width: 100%;
+                        background-color: $brick-blue;
+                        position: absolute;
+                        bottom: -3px;                
+                    }
+                }
+
+                .details-wrapper {
+                    text-align: left;
+
+                    ul {
+                        li {
+                            margin: 5px 0;
+                            
+                            &::marker {
+                                color: $brick-blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
