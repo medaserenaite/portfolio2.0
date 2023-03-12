@@ -1,6 +1,7 @@
 import '../App.scss';
 import React, { useState } from 'react'
 import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiCopy, FiCoffee  } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [active, setActive] = useState(false)
@@ -54,10 +55,10 @@ export default function Home() {
           </div>
 
           <div className='work-icon'>
-              <a href="/work">
+            <Link to="/work">
                 <FiCoffee className="icon"/>
                 <div className='icon-text'>WORK</div>
-              </a>
+            </Link>
             </div>
     </div>
   </div>
