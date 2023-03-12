@@ -1,20 +1,13 @@
 import '../App.scss';
-import React, { useState } from 'react'
+import React from 'react'
 import keycom from '../../src/images/keycom.png'
 import keyhcp from '../../src/images/keyhcp.png'
 import keylencom from '../../src/images/keylencom.png'
 import keylenhcp from '../../src/images/keylenhcp.png'
 import rhino from '../../src/images/rhinodox2.png'
-import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiCopy, FiExternalLink, FiCoffee  } from 'react-icons/fi';
+import { FiExternalLink  } from 'react-icons/fi';
 
 export default function Work() {
-  const [active, setActive] = useState(false)
-
-  const handleChangeActive = () => {
-    setActive((previous) => {
-      return !previous;
-    });
-  };
 
   let projects = [
     {

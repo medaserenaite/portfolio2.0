@@ -6,12 +6,18 @@ export default function Home() {
   const [active, setActive] = useState(false)
 
   const handleChangeActive = () => {
+    navigator.clipboard.writeText('meda.serenaite@gmail.com')
+    setTimeout(() => {
+        // alert('alerted');
+        setActive((previous) => {
+            return !previous;
+          });  
+      }, 1000);
+    //   return () => clearTimeout(timer);
     setActive((previous) => {
       return !previous;
-    });
+    });    
   };
-
-//   onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}
 
   return (
     <div className="App">
@@ -34,13 +40,11 @@ export default function Home() {
               </a>
             </div>
 
-            <div className='icon-wrapper checkmark'>
-            {/* onClick={() => handleChangeActive()} */}
-              {/* { active ?  */}
-                <><FiMail className="icon"/><div className='icon-text'> meda.serenaite@gmail.com</div></> 
-                {/* copied-notify  icon--copied*/}
-              {/* : 
-                <FiMail className="icon"/>  } */}
+            <div className='icon-wrapper checkmark' onClick={() => handleChangeActive()}>
+              { active ? 
+                <><FiCopy className="icon"/><div className='icon-text copied-notify con--copied'>copied!</div></> 
+              : 
+                <FiMail className="icon"/>  }
             </div>
 
             <div className='icon-wrapper'>
