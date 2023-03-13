@@ -1,0 +1,150 @@
+@import '../../App.scss';
+
+.intro {
+    margin: 240px 0;
+    
+    &__role {
+        font-size: 12px;
+        color: $peach;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: -40px;
+    }
+
+    .work-icon {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+        cursor: pointer;
+        width: fit-content;
+    
+        a {
+            display: flex;
+            text-decoration: none;
+            color: $pinkish-white;
+            border: solid 1px $brick-blue;
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+    
+            @media only screen and (min-width: 800px) {
+                margin-top: 10px;
+            }
+    
+            &:hover {
+                border: solid 1px $peach-transparent;
+                background-color: $brick-blue;
+                transition-duration: 0.3s;
+                box-shadow: 0 0px 10px 2px $peach;
+            }
+        }
+    
+        .icon {
+            width: 30px;
+            height: 30px;
+    
+            @media only screen and (min-width: 800px) {
+                height: 20px;
+                width: 20px;
+            }
+    
+            &-text {
+                font-size: 14px;
+                color: $pinkish-white;
+                margin: auto;
+                margin-left: 5px;
+    
+                @media only screen and (min-width: 800px) {
+                    font-size: 12px;
+                }
+            }
+        }
+    
+        &:hover {
+            color: $brick-blue; 
+            transition-duration: 0.5s;
+        }
+    }    
+
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        .icon-wrapper {
+            padding: 5px 10px;
+            display: flex;
+            position: relative;
+            height: 30px;
+    
+            @media only screen and (min-width: 800px) {
+                height: 20px;
+            }
+    
+            .icon {
+                color: $pinkish-white;
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+    
+                @media only screen and (min-width: 800px) {
+                    height: 20px;
+                    width: 20px;
+                }
+        
+                &:hover {
+                    color: $brick-blue; 
+                    transition-duration: 0.3s;
+                }
+        
+                &--copied {
+                    color: $brick-blue;
+                }
+    
+                &--location {
+                    color: $pinkish-white;
+                    height: 30px;
+                    width: 30px;  
+                    
+                    @media only screen and (min-width: 800px) {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+    
+            .icon-text {
+                font-size: 14px;
+                color: $pinkish-white;
+                margin: auto;
+                margin-left: 5px;
+    
+                @media only screen and (min-width: 800px) {
+                    font-size: 12px;
+                }
+            }
+    
+            .copied-notify {
+                background-color: $brick-blue;
+                border: solid 1px $peach-transparent;
+                border-radius: 5px;
+                padding: 5px 10px;
+                margin-left: 15px;
+                position: absolute;
+                box-shadow: 0 0px 10px 2px $peach;
+                color: $pinkish-white;    
+                left: 15px;
+                top: -15px;
+                z-index: 2;
+
+                animation-duration: 0.3s;
+                animation-name: copied-text-notification;
+                animation-timing-function: ease-out;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
+

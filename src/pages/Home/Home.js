@@ -1,27 +1,25 @@
-import '../App.scss';
+import './Home.scss';
 import React, { useState } from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiCopy, FiCoffee  } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiCopy, FiCoffee } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [active, setActive] = useState(false)
 
   const handleChangeActive = () => {
+    // copies email to clipboard
     navigator.clipboard.writeText('meda.serenaite@gmail.com')
+
+    // sets 'copied' state
+    setActive((previous) => {return !previous;});    
+
+    // resets 'copied' state to initial
     setTimeout(() => {
-        // alert('alerted');
-        setActive((previous) => {
-            return !previous;
-          });  
-      }, 1000);
-    //   return () => clearTimeout(timer);
-    setActive((previous) => {
-      return !previous;
-    });    
+        setActive((previous) => { return !previous; });
+    }, 1000);
   };
 
   return (
-    <div className="App">
       <div className='page-wrapper'>
         <div className='intro'>
           <h1>Meda Serenaite</h1>
@@ -60,9 +58,8 @@ export default function Home() {
                 <div className='icon-text'>WORK</div>
             </Link>
             </div>
-    </div>
-  </div>
-</div>
+          </div>
+        </div>
   );
 }
 

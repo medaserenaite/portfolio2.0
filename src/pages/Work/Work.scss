@@ -1,0 +1,104 @@
+@import '../../App.scss';
+
+.project-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .project {
+        margin: 5px 5px 25px 5px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        background: $brick-blue-transparent;
+        margin-bottom: 40px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: inset 0 -7px 9px -7px #9993997d;
+        border: solid 1px $brick-blue;
+
+        @media only screen and (min-width: 800px) {
+            flex-direction: row;
+        }
+
+        .image-wrapper {
+            width: 300px;
+            height: 200px;
+
+            img {
+                max-width:100%;
+                max-height:100%;
+                object-fit: contain;
+                z-index: 0;
+                border-radius: 5px;
+            }
+        }
+
+        &__name {
+            text-align: left;
+            font-size: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: $gray;
+            line-height: 20px;
+        }
+
+        &__details {
+            color: $pinkish-white;
+            padding: 20px 5px 5px 15px;
+
+    
+            @media only screen and (min-width: 800px) {
+                width: 400px;
+                padding: 0 5px 5px 15px;
+            }
+    
+            a {
+                text-decoration: none;
+                color: $pale-orange;
+                font-size: 12px;
+                position: relative;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+    
+                &:hover {
+                    transition-duration: 0.75s;
+                    color: $peach;
+    
+                    .icon {
+                        transition-duration: 0.75s;
+                        color: $gray;
+                    }
+                    &::before {
+                        transition-duration: 0.75s;
+                        background-color: $gray;
+                    }
+                }
+    
+                &::before {
+                    display: block;
+                    content: '';
+                    height: 1px;
+                    width: 100%;
+                    background-color: $brick-blue;
+                    position: absolute;
+                    bottom: -3px;                
+                }
+            }
+
+            .details-wrapper {
+                text-align: left;
+
+                ul {
+                    li {
+                        margin: 5px 0;
+                        
+                        &::marker {
+                            color: $brick-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
